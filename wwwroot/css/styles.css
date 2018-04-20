@@ -11,3 +11,23 @@ div#footer {
   padding: 5px;
   padding-bottom: 15px;
 }
+
+form #new-name {
+  margin-top: 15px;
+}
+
+form #new-phone {
+  margin-top: 15px;
+}
+form #new-street {
+  margin-top: 15px;
+}
+form #new-city {
+  margin-top: 15px;
+}
+form #new-state {
+  margin-top: 15px;
+}
+form #submit {
+  margin-top: 25px;
+}
