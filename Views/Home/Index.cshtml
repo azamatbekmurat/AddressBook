@@ -1,22 +1,30 @@
-<h1>Address Book</h1>
-@if (@Model.Count == 0)
-{
-  <h3>There is no contacts in the address book!</h3>
+@{
+  Layout = "_Layout";
 }
-<ul>
 
-  @foreach(var contact in Model)
+<div class="container">
+  <h1>List of contacts:</h1>
+  @if (@Model.Count == 0)
   {
-
-  <li>Contact Name: @contact.GetName()</li>
-    <ul>
-      <li>Phone Number: @contact.GetPhone()</li>
-      <li>Address info: @contact.GetAddress().GetAddressInfo()</li>
-    </ul>
+    <h3>There is no contacts in the address book!</h3>
   }
-</ul>
-<p><a href="/contacts/new">Add another contact.</a></p>
+  <ul>
+    @{var contactCounter = 0;}
 
-<form action="/contacts/delete" method="post">
-  <button type="submit" name="button">Clear All contacts from the List</button>
-</form>
+    @foreach(var contact in Model)
+    {
+      contactCounter++;
+
+      <li>Contact person @contactCounter: <a href='/@contact.GetID()'>@contact.GetName()</a></li>
+        <ul>
+          <li>Phone Number: @contact.GetPhone()</li>
+          <li>Address info: @contact.GetAddress().GetAddressInfo()</li>
+        </ul>
+    }
+  </ul>
+  <p><a href="/contacts/new">Add another contact.</a></p>
+
+  <form action="/contacts/delete" method="post">
+    <button type="submit" name="button">Clear All contacts from the List</button>
+  </form>
+</div>

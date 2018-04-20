@@ -33,6 +33,10 @@ namespace AddressBook.Models
     {
       return _address;
     }
+    public int GetID()
+    {
+      return _id;
+    }
     public static List<Contact> GetAll()
     {
       return _instances;
@@ -44,6 +48,10 @@ namespace AddressBook.Models
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+    public static Contact Find(int searchId)
+    {
+      return _instances[searchId-1];
     }
   }
 }
