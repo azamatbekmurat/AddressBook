@@ -1,15 +1,17 @@
 @{
   Layout = "_Layout";
 }
+
 <div class="container">
   <h2>Detailed info about contact:</h2>
 
-  <p>Name: @Model.GetName()</p>
+  <p>Name: <span class="inputContactName">@Model.GetName()</span></p>
     <ul>
-      <li>Phone Number: @Model.GetPhone()</li>
-      <li>Address info: @Model.GetAddress().GetAddressInfo()</li>
+      <li>Phone Number: <span class="inputPhone">@Model.GetPhone()</span></li>
+      <li>Address info: <span class="inputAddress">@Model.GetAddress().GetAddressInfo()</span></li>
     </ul>
 
+  <br>
   <p><a href="/contacts/new">Add another contact.</a></p>
   <p><a href="/">Back to home.</a></p>
   <br>

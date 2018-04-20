@@ -12,6 +12,28 @@ div#footer {
   padding-bottom: 15px;
 }
 
+li #inputName {
+  font-style: bold;
+  font-size: 15px;
+}
+
+.inputContactName {
+  font-style: bolder;
+  font-size: 25px;
+  color: #074cbc;
+  text-decoration: underline;
+}
+
+.inputPhone {
+  font-style: italic;
+  color: #07bc40;
+}
+
+.inputAddress {
+  font-style: italic;
+  color: #07b8bc;
+}
+
 form #new-name {
   margin-top: 15px;
 }

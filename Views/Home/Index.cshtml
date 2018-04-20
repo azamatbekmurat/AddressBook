@@ -15,13 +15,14 @@
     {
       contactCounter++;
 
-      <li>Contact person @contactCounter: <a href='/@contact.GetID()'>@contact.GetName()</a></li>
+      <li>Contact person @contactCounter: <a id="inputName" href='/@contact.GetID()'>@contact.GetName()</a></li>
         <ul>
           <li>Phone Number: @contact.GetPhone()</li>
           <li>Address info: @contact.GetAddress().GetAddressInfo()</li>
         </ul>
     }
   </ul>
+  <br>
   <p><a href="/contacts/new">Add another contact.</a></p>
   <br>
   <form action="/contacts/delete" method="post">

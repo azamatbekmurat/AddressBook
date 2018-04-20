@@ -7,7 +7,7 @@ namespace AddressBook.Controllers
 {
   public class HomeController : Controller
   {
-        [HttpGet("/")] //probably will change path to '/'
+        [HttpGet("/")]
         public ActionResult Index()
         {
           List<Contact> allContacts = Contact.GetAll();
