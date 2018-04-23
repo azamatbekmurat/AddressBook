@@ -11,13 +11,14 @@ namespace AddressBook.Models
     private Address _address;
 
     private static List<Contact> _instances = new List<Contact> {};
+    private static int lastId = 1;
 
     public Contact(string Name, string phoneNumber, Address addressDetails)
     {
       _name = Name;
       _phone = phoneNumber;
       _address = addressDetails;
-      _id = _instances.Count+1;
+      _id = lastId++;
     }
 
     public string GetName()
@@ -50,16 +51,27 @@ namespace AddressBook.Models
     }
     public static void RemoveContact(int cntId)
     {
-      _instances.RemoveAt(cntId);
-      //To reset the id value of contacts in the list
-      for (int i = 0; i < _instances.Count; i++)
-      {
-        _instances[i]._id = i+1;
+      Console.WriteLine("Deleting"+cntId);
+      var toDelete = -1;
+      for (var i=0; i<_instances.Count; i++) {
+        if (_instances[i].GetID() == cntId ) {
+          toDelete=i;
+        }
+      }
+      if (toDelete!=-1) {
+        _instances.RemoveAt(toDelete);
       }
     }
+
     public static Contact Find(int searchId)
     {
-      return _instances[searchId-1];
+      Console.WriteLine("Searching"+searchId);
+      for (var i=0; i<_instances.Count; i++) {
+        if (_instances[i].GetID() == searchId ) {
+          return _instances[i];
+        }
+      }
+      return null;
     }
   }
 }

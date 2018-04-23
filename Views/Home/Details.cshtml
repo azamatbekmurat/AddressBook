@@ -6,6 +6,7 @@
   <h2>Detailed info about contact:</h2>
 
   <p>Name: <span class="inputContactName">@Model.GetName()</span></p>
+  <p>Contact ID: @Model.GetID()</p>
     <ul>
       <li>Phone Number: <span class="inputPhone">@Model.GetPhone()</span></li>
       <li>Address info: <span class="inputAddress">@Model.GetAddress().GetAddressInfo()</span></li>
@@ -15,7 +16,7 @@
   <p><a href="/contacts/new">Add another contact.</a></p>
   <p><a href="/">Back to home.</a></p>
   <br>
-  <form action="/contacts/deleteContact" method="post">
+  <form action="/contacts/deleteContact/@Model.GetID()" method="post">
     <button type="submit" name="button">Delete contact from the List</button>
   </form>
 

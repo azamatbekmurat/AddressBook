@@ -20,7 +20,7 @@ namespace AddressBook.Controllers
           return View();
         }
 
-        [HttpPost("/")]
+        [HttpPost("/input")]
         public ActionResult Create()
         {
           Address newAddress = new Address(Request.Form["new-street"], Request.Form["new-city"], Request.Form["new-state"]);
@@ -46,9 +46,11 @@ namespace AddressBook.Controllers
           return View();
         }
 
-        [HttpPost("/contacts/deleteContact")]
+        [HttpPost("/contacts/deleteContact/{id}")]
         public ActionResult DeleteContact(int id)
         {
+          // Con tact contactID = Contact.GetID();
+          // Contact contactID =
           Contact.RemoveContact(id);
           return View();
         }
