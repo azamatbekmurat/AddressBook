@@ -49,8 +49,6 @@ namespace AddressBook.Controllers
         [HttpPost("/contacts/deleteContact/{id}")]
         public ActionResult DeleteContact(int id)
         {
-          // Con tact contactID = Contact.GetID();
-          // Contact contactID =
           Contact.RemoveContact(id);
           return View();
         }
